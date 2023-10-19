@@ -4,7 +4,7 @@ import { TypeOrmModuleOptions } from "@nestjs/typeorm"
 export const getTypeOrmConfig = async (configService: ConfigService): Promise<TypeOrmModuleOptions> => {
     return {
         type: "mssql",
-        host: "localhost",
+        host: "digitalcarddb.database.windows.net",
         username: configService.get("USER_DATABASE"),
         password: configService.get("PASSWORD_DATABASE"),
         autoLoadEntities: true,
