@@ -12,7 +12,7 @@ export const getTypeOrmConfig = async (configService: ConfigService): Promise<Ty
         synchronize: true,
         database: configService.get("NAME_DATABASE"),
         extra: {
-            trustServerCertificate: true,
+            trustServerCertificate: false,
             encrypt: true
         }
     };

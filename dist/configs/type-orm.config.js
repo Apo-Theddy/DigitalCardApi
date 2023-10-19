@@ -4,7 +4,7 @@ exports.getTypeOrmConfig = void 0;
 const getTypeOrmConfig = async (configService) => {
     return {
         type: "mssql",
-        host: "localhost",
+        host: "digitalcarddb.database.windows.net",
         username: configService.get("USER_DATABASE"),
         password: configService.get("PASSWORD_DATABASE"),
         autoLoadEntities: true,
@@ -12,7 +12,7 @@ const getTypeOrmConfig = async (configService) => {
         synchronize: true,
         database: configService.get("NAME_DATABASE"),
         extra: {
-            trustServerCertificate: true,
+            trustServerCertificate: false,
             encrypt: true
         }
     };
